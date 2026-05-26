@@ -40,8 +40,8 @@ def _bullets(hits: List[Dict], max_points: int = 6) -> str:
     for h in hits[:max_points]:
         t = (h.get("text") or "").strip()
         t = shorten(t, width=300, placeholder="…")
-        points.append(f"- {t}" if t else "- (empty snippet)")
-    return "\n".join(points) if points else "- _No clear snippets found._"
+        points.append(f"• {t}" if t else "• (empty snippet)")
+    return "\n".join(points) if points else "• _No clear snippets found._"
 
 
 def _should_fallback(hits: List[Dict]) -> bool:
