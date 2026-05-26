@@ -16,7 +16,6 @@ dependencies = [
     "pypdf>=4.2.0",
     "loguru>=0.7.2",
     "numpy>=1.26.0",
-    "sentence-transformers>=2.2.0",
 ]
 
 [tool.ruff]
