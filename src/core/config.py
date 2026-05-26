@@ -26,12 +26,9 @@ def getenv(key: str, default: Optional[str] = None) -> Optional[str]:
     return s if s not in (None, "") else default
 
 class Settings(BaseModel):
-    OPENAI_API_KEY: Optional[str] = getenv("OPENAI_API_KEY")
-    EMBEDDINGS_PROVIDER: str = getenv("EMBEDDINGS_PROVIDER", "openai")
+    EMBEDDINGS_PROVIDER: str = getenv("EMBEDDINGS_PROVIDER", "st")
     EMBEDDINGS_MODEL: str = getenv("EMBEDDINGS_MODEL", "text-embedding-3-small")
-    GEN_MODEL: str = getenv("GEN_MODEL", "gpt-4o-mini")
     ST_MODEL: str = getenv("ST_MODEL", "all-MiniLM-L6-v2")
-    USE_LLM: bool = str(getenv("USE_LLM", "false")).lower() == "true"
     USE_DENSE: bool = str(getenv("USE_DENSE", "1")).strip() == "1"
     TOP_K: int = int(getenv("TOP_K", "6"))
     DATABASE_URL: Optional[str] = getenv("DATABASE_URL")

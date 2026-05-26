@@ -13,8 +13,8 @@ from src.llm.generator import generate_answer
 
 # ---- page config ----
 st.set_page_config(
-    page_title="SmartHR Copilot",
-    page_icon="🤖",
+    page_title="Hotel HR Smart Desk",
+    page_icon="🏨",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
@@ -287,14 +287,13 @@ st.markdown("""
 # ---- Hero Section ----
 st.markdown("""
 <div class="hero-section">
-    <div class="hero-badge">AI-Powered HR Policy Assistant</div>
+    <div class="hero-badge">Hotel HR Smart Assistant</div>
     <h1 class="hero-title">
-        Intelligent HR Support <br/>
-        <span class="hero-title-gradient">for Modern Workplaces</span>
+        Intelligent HR Support for Hospitality <br/>
+        <span class="hero-title-gradient">with polished hotel policy guidance</span>
     </h1>
     <p class="hero-subtitle">
-        Never miss important policy information. Our AI handles queries 24/7,
-        answers questions using RAG technology, and retrieves accurate policy details instantly.
+        Find hotel HR policy answers quickly and professionally. This RAG-based assistant uses your policy corpus to provide accurate guidance and, when unsure, gently recommends contacting HR.
     </p>
 </div>
 """, unsafe_allow_html=True)
@@ -315,7 +314,7 @@ with col2:
         st.markdown('<h3 class="section-heading">🎨 Response Style</h3>', unsafe_allow_html=True)
         style_label = st.radio(
             "Choose your preferred answer format:",
-            ["📝 Bullets", "📄 Paragraph (no-LLM)", "🤖 LLM (OpenAI)"],
+            ["📝 Focused bullets", "📄 Friendly summary"],
             index=1,
             horizontal=True,
             label_visibility="collapsed"
@@ -323,7 +322,7 @@ with col2:
         
         submitted = st.form_submit_button("🔍 Get Answer", use_container_width=True)
 
-    style = {"📝 Bullets": "bullets", "📄 Paragraph (no-LLM)": "paragraph", "🤖 LLM (OpenAI)": "llm"}[style_label]
+    style = {"📝 Focused bullets": "bullets", "📄 Friendly summary": "paragraph"}[style_label]
 
     if submitted and q.strip():
         with st.spinner('🔍 Searching and generating answer...'):
@@ -397,20 +396,20 @@ st.markdown("""
 
 # ---- Sidebar with info ----
 with st.sidebar:
-    st.markdown("### 📚 About SmartHR Copilot")
+    st.markdown("### 📚 About Hotel HR Smart Desk")
     st.markdown("""
-    This AI assistant helps you quickly find answers to HR policy questions.
+    This HR assistant helps hotel employees find policy answers from the internal knowledge base.
     
     **Features:**
-    - 🔍 Hybrid search across all policies
-    - 🤖 AI-powered responses
-    - 📊 Source citations
-    - ⚡ Fast and accurate
+    - 🔍 Pure RAG search with local policy retrieval
+    - 📊 Clear citations from hotel HR documents
+    - 🧭 Polite guidance when policies are unclear
+    - ⚡ Fast and reliable
     
     **Tips:**
-    - Ask specific questions
-    - Use natural language
-    - Try different response styles
+    - Ask in natural language
+    - Use specific terms like 'PTO', 'dress code', or 'leave request'
+    - If you still need help, contact your HR team
     """)
     
     st.markdown("---")

@@ -1,10 +1,9 @@
-### SmartHR Copilot (Streamlit + OpenAI API)
+### Hotel HR Smart Desk (Pure RAG Chatbot)
 
-SmartHR Copilot is an AI-powered HR assistant built with Streamlit that uses Retrieval-Augmented Generation (RAG) and the OpenAI API to answer company HR policy questions with accuracy, citations, and a personal touch.
+Hotel HR Smart Desk is a polished, Streamlit-based HR assistant that uses Retrieval-Augmented Generation (RAG) to answer policy questions from the hotel HR knowledge base. It does not require an OpenAI API key for the core retrieval and answer workflow.
 
-It’s designed to make internal HR communication effortless — helping employees instantly check policies, understand benefits, or get leave-related answers without emailing HR.
-The project is evolving to include features like checking leave balances, applying for leave, and accessing personalized HR data through natural conversations.
+It is designed to help employees, new joiners, and interns quickly find hotel HR policy details, learn about benefits, and get polite guidance when the knowledge base does not provide a confident answer.
 
-Dataset used- A custom synthetic policy dataset is used for RAG. 
+Dataset used: a custom HR policy corpus for hotel employees.
 
 

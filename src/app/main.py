@@ -32,19 +32,17 @@ def _shorten(s: str, n: int = 180) -> str:
 
 
 # ----------------------------- UI ---------------------------------------
-st.set_page_config(page_title="SmartHR Copilot", layout="wide")
-st.title("SmartHR Copilot")
+st.set_page_config(page_title="Hotel HR Smart Desk", layout="wide")
+st.title("Hotel HR Smart Desk")
 
 # Sidebar status
 with st.sidebar:
     st.subheader("Status")
-    # Embeddings / LLM flags (safe fallbacks if your Settings doesn't have them)
     embed_model = getattr(settings, "EMBEDDINGS_MODEL", "text-embedding-3-small")
-    embed_provider = getattr(settings, "EMBEDDINGS_PROVIDER", "st")  # 'openai' or 'st'
-    use_llm = getattr(settings, "USE_LLM", "false")
+    embed_provider = getattr(settings, "EMBEDDINGS_PROVIDER", "st")
 
     st.write("**Embeddings**:", f"`{embed_provider}` · `{embed_model}`")
-    st.write("**LLM mode**:", f"`{use_llm}` (answers are extractive if false)")
+    st.write("**Mode**:", "`RAG only` — no external OpenAI API key required")
 
     if getattr(settings, "DATABASE_URL", None):
         st.write("**DB:** configured")
@@ -67,7 +65,7 @@ with st.sidebar:
         st.session_state.pop("last_hits", None)
         st.experimental_rerun()
 
-st.caption("Ask about your HR policies. The bot answers from retrieved snippets with citations.")
+st.caption("Ask about your hotel HR policies. The bot answers from retrieved snippets with citations and politely suggests contacting HR when a clear match is not found.")
 
 
 # --------------------------- Chat state ----------------------------------
